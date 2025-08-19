@@ -10,18 +10,16 @@ contract MintBasicNft is Script {
     string public constant TOKENURI =
         "ipfs://QmRfeyGSuKHgyQ2nqGXnn5wBhFJ6KGj5ShtwHo9Vc4k8yv/SleepEarlyNft.jpg=0-PUG.json";
 
-    function run() external {
-        address mostRecentlyDeployed = DevOpsTools.get_most_recently_deployed(
-            // Remember, if you don't recall which parameters are required for a function like get_most_recent_deployment 
-            // you can ctrl + left-click (cmd + click) to be brought to the function definition.
-            "BasicNft",
-            block.chainid
-        );
+    function run() external { // This function is called to mint the NFT on the most recently deployed BasicNft contract.
+        address mostRecentlyDeployed = DevOpsTools.get_most_recent_deployment("BasicNft", block.chainid);
+
+        // Remember, if you don't recall which parameters are required for a function like get_most_recent_deployment 
+        // you can ctrl + left-click (cmd + click) to be brought to the function definition.
 
         mintNftOnContract(mostRecentlyDeployed);
     }
 
-    function mintNftOncOntract(address contractAddress) public {
+    function mintNftOnContract(address contractAddress) public {
         vm.startBroadcast();
         // BasicNft basicNft = BasicNft(contractAddress);
         // basicNft.mintNft(TOKENURI);
