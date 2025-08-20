@@ -8,7 +8,7 @@ import {DevOpsTools} from "lib/foundry-devops/src/DevOpsTools.sol";
 
 contract MintBasicNft is Script {
     string public constant TOKENURI =
-        "ipfs://QmRfeyGSuKHgyQ2nqGXnn5wBhFJ6KGj5ShtwHo9Vc4k8yv/SleepEarlyNft.jpg=0-PUG.json";
+        "ipfs://QmRfeyGSuKHgyQ2nqGXnn5wBhFJ6KGj5ShtwHo9Vc4k8yv/SleepEarlyNft.jpg.json";
 
     function run() external { // This function is called to mint the NFT on the most recently deployed BasicNft contract.
         address mostRecentlyDeployed = DevOpsTools.get_most_recent_deployment("BasicNft", block.chainid);
