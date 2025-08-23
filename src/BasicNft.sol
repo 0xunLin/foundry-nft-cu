@@ -13,7 +13,7 @@ contract BasicNft is ERC721 {
     //     _symbol = symbol_;
     // }
 
-    constructor() ERC721("Habit", "HAB") { // Call the constructor of the ERC721 contract with the name and symbol of the NFT.
+    constructor() ERC721("Mood", "MD") { // Call the constructor of the ERC721 contract with the name and symbol of the NFT.
             s_tokenCounter = 0;
 
     }
