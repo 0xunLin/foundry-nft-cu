@@ -22,7 +22,7 @@ contract MoodNft is ERC721 {
     constructor(
         string memory happySvgImageUri,
         string memory sadSvgImageUri
-    ) ERC721("Find Her", "FH") {
+    ) ERC721("Mood NFT", "MOOD") {
         s_tokenCounter = 0;
         s_happySvgImageUri = happySvgImageUri;
         s_sadSvgImageUri = sadSvgImageUri;
@@ -64,7 +64,7 @@ contract MoodNft is ERC721 {
         return "data:application/json;base64,";
     }
 
-    function flipMood(uint256 tokenId) public {
+    function flipMood(uint256 tokenId) public view {
         if (
             getApproved(tokenId) != msg.sender && ownerOf(tokenId) != msg.sender
         ) {
